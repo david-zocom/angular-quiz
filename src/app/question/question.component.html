@@ -1,0 +1,14 @@
+<div>
+	<h1>Quiz</h1>
+	<div> {{ question.caption }} </div>
+	<app-answer-option
+		*ngFor="let option of question.answers"
+		(toggleAnswer)="handleToggleAnswer($event)"
+		[option]="option">
+	</app-answer-option>
+	<br />
+	<button (click)="submitAnswer()">Lämna in svaret!</button>
+	<div>
+		Du har {{ points }} poäng
+	</div>
+</div>
